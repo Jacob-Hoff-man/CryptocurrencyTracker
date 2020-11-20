@@ -160,7 +160,7 @@ class Currencies: ObservableObject {
 }
 
 struct Currency: Identifiable, Codable, Equatable {
-    let id = UUID()
+    var id = UUID()
     var name: String
     let ticker: String
     var tradeVolume: Int
@@ -179,7 +179,7 @@ struct Currency: Identifiable, Codable, Equatable {
     var buyPrice: Double? = nil
     
     struct NewsArticle: Identifiable, Codable, Equatable {
-        let id = UUID()
+        var id = UUID()
         let title: String
         let url: String
     }

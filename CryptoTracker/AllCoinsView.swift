@@ -70,17 +70,11 @@ struct DetailView: View {
             }
             
         }) {
-            if self.currency.favorited {
-                Image(systemName: "star").accentColor(Color.yellow)
-            } else {
-                Image(systemName: "star")
+            if let index = self.currencies.currencies.firstIndex(where: {$0.id == self.currency.id }) {
+                Image(systemName: "star").accentColor(self.currencies.currencies[index].favorited ? Color.yellow : Color.blue)
             }
-            
         })
-
-        
     }
-    
 }
 
 struct AllCoinsList: View {
